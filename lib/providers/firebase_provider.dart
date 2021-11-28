@@ -1,5 +1,10 @@
+import 'dart:async';
+import 'dart:io';
+
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase/models/porduct_dao.dart';
+import 'package:firebase_storage/firebase_storage.dart' as firebase_storage;
+import 'package:uuid/uuid.dart';
 
 class FirebaseProvider {
   late FirebaseFirestore _firestore;
@@ -8,6 +13,8 @@ class FirebaseProvider {
   FirebaseProvider() {
     _firestore = FirebaseFirestore.instance;
     _productsCollection = _firestore.collection('products');
+    firebase_storage.FirebaseStorage storage =
+        firebase_storage.FirebaseStorage.instance;
   }
 
   Future<void> saveProduct(ProductDAO product) =>

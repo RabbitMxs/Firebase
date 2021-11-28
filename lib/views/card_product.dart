@@ -23,9 +23,10 @@ class CardProduct extends StatelessWidget {
           ),
         ),
         Opacity(
-          opacity: .6,
+          opacity: .8,
           child: Container(
-            //height: 55.0,
+            padding: EdgeInsets.only(left: 15),
+            height: 50.0,
             color: Colors.black,
             child: Row(
               children: [

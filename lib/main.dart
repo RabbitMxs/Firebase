@@ -1,3 +1,4 @@
+import 'package:firebase/screens/new_product.dart';
 import 'package:firebase/screens/products_screen.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
@@ -13,6 +14,10 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      routes: {
+        '/new': (BuildContext context) => newProduct(),
+      },
+      debugShowCheckedModeBanner: false,
       home: ListProducts(),
     );
   }
